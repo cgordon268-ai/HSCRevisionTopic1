@@ -1,0 +1,942 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Topic 1 revision: Concepts of health and well-being</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#eef3f6;--card:#ffffff;--ink:#14293a;--muted:#536678;--line:#cdd8e0;--focus:#2f5fbf;
+  --p:#1d7a55;--i:#2f5fbf;--e:#b3345a;--s:#9a6500;
+  --p-bg:#e0f2e9;--i-bg:#e3ebfa;--e-bg:#fae4ec;--s-bg:#faefd4;
+  --ok:#1d7a55;--ok-bg:#e0f2e9;--bad:#b3261e;--bad-bg:#fbe3e0;
+  --fb:'Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+  --fh:'Bricolage Grotesque','Atkinson Hyperlegible',system-ui,-apple-system,'Segoe UI',sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0e1a23;--card:#16252f;--ink:#e3ecf2;--muted:#9bb0bf;--line:#2b3f4d;--focus:#8fb0f5;
+  --p:#62d0a2;--i:#93b3f6;--e:#f28caa;--s:#f2c35d;
+  --p-bg:#16382c;--i-bg:#1b2b4b;--e-bg:#42202c;--s-bg:#3d3115;
+  --ok:#62d0a2;--ok-bg:#16382c;--bad:#f39389;--bad-bg:#4a1f1c;
+}}
+:root[data-theme="dark"]{
+  --paper:#0e1a23;--card:#16252f;--ink:#e3ecf2;--muted:#9bb0bf;--line:#2b3f4d;--focus:#8fb0f5;
+  --p:#62d0a2;--i:#93b3f6;--e:#f28caa;--s:#f2c35d;
+  --p-bg:#16382c;--i-bg:#1b2b4b;--e-bg:#42202c;--s-bg:#3d3115;
+  --ok:#62d0a2;--ok-bg:#16382c;--bad:#f39389;--bad-bg:#4a1f1c;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--fb);font-size:17px;line-height:1.55;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+h1,h2,h3{font-family:var(--fh);line-height:1.15;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.1rem,6vw,3.4rem);font-weight:800}
+h2{font-size:clamp(1.5rem,3.6vw,2rem);font-weight:800}
+h3{font-size:1.2rem;font-weight:600}
+p{margin:0 0 1em}
+a{color:var(--i)}
+button,input,textarea,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--paper);border-bottom:1px solid var(--line)}
+.top-in{max-width:1080px;margin:0 auto;padding:.6rem 1rem;display:flex;gap:1rem;align-items:center}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink);flex:none}
+.brand b{font-family:var(--fh);font-weight:800;font-size:1.05rem}
+.mini{display:grid;grid-template-columns:repeat(2,11px);gap:2px}
+.mini i{width:11px;height:11px;border-radius:3px;display:block}
+.mini i:nth-child(1){background:var(--p)}.mini i:nth-child(2){background:var(--i)}.mini i:nth-child(3){background:var(--e)}.mini i:nth-child(4){background:var(--s)}
+nav{display:flex;gap:.3rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px}
+nav::-webkit-scrollbar{display:none}
+nav a{white-space:nowrap;text-decoration:none;color:var(--muted);padding:.35rem .7rem;border-radius:999px;font-size:.92rem}
+nav a:hover{color:var(--ink);background:var(--card)}
+nav a[aria-current="page"]{background:var(--ink);color:var(--paper)}
+
+main{max-width:880px;margin:0 auto;padding:1.5rem 1rem 4rem}
+.view[hidden]{display:none}
+.bp{font-weight:700;color:var(--muted);margin-bottom:.3rem;font-size:.95rem}
+.lead{font-size:1.1rem;color:var(--muted);max-width:62ch}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:center;padding:1rem 0 1rem}
+.pies{display:grid;grid-template-columns:repeat(2,minmax(96px,124px));gap:8px}
+.pies div{aspect-ratio:1;border-radius:18px;padding:.7rem;display:flex;flex-direction:column;justify-content:space-between;color:#fff}
+.pies div:nth-child(1){background:#1d7a55}.pies div:nth-child(2){background:#2f5fbf}.pies div:nth-child(3){background:#b3345a}.pies div:nth-child(4){background:#9a6500}
+.pies b{font-family:var(--fh);font-weight:800;font-size:2.4rem;line-height:1}
+.pies span{font-size:.9rem}
+@media (max-width:640px){.hero{grid-template-columns:1fr}.pies{grid-template-columns:repeat(4,1fr)}.pies div{border-radius:12px;padding:.45rem}.pies b{font-size:1.6rem}.pies span{font-size:.72rem}}
+
+/* panels */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.25rem;margin:0 0 1.25rem}
+.panel > h3:first-child{margin-top:0}
+.how{color:var(--muted);font-size:.95rem}
+.tip{border-left:4px solid var(--i);background:var(--i-bg);padding:.8rem 1rem;border-radius:0 10px 10px 0;margin:0 0 1.25rem}
+.tip p:last-child{margin:0}
+
+/* outcomes list on home */
+.outcomes{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.outcomes li{border-bottom:1px solid var(--line)}
+.outcomes a{display:grid;grid-template-columns:3.2rem 1fr 7rem;gap:1rem;align-items:center;padding:1rem .25rem;text-decoration:none;color:var(--ink)}
+.outcomes a:hover{background:var(--card)}
+.outcomes .n{font-family:var(--fh);font-weight:800;font-size:1.5rem;color:var(--muted)}
+.outcomes strong{display:block;font-size:1.05rem}
+.outcomes small{color:var(--muted);font-size:.92rem}
+.meter{display:block}.bar{display:block;height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
+.pct{display:block;font-size:.85rem;color:var(--muted);text-align:right;margin-top:.2rem}
+@media (max-width:560px){.pct{text-align:left}}
+@media (max-width:560px){.outcomes a{grid-template-columns:2.4rem 1fr}.outcomes .meter{grid-column:2}}
+.practice{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-top:1rem}
+.practice a{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem;text-decoration:none;color:var(--ink)}
+.practice a:hover{border-color:var(--ink)}
+.practice strong{display:block;font-family:var(--fh);font-size:1.15rem}
+.practice small{color:var(--muted)}
+@media (max-width:640px){.practice{grid-template-columns:1fr}}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:10px;padding:.55rem 1rem;cursor:pointer;font-weight:700}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+.seg{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 1rem}
+.seg button{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:.4rem .85rem;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* tags */
+.tag{display:inline-grid;place-items:center;width:1.6rem;height:1.6rem;border-radius:7px;font-family:var(--fh);font-weight:800;font-size:.9rem;color:#fff;flex:none}
+.t-p{background:var(--p)}.t-i{background:var(--i)}.t-e{background:var(--e)}.t-s{background:var(--s)}
+:root[data-theme="dark"] .tag{color:#0e1a23}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:#0e1a23}}
+
+/* flashcards */
+.flash{perspective:1200px;margin:0 0 1rem}
+.fcard{position:relative;width:100%;min-height:240px;border:0;padding:0;background:none;cursor:pointer;transform-style:preserve-3d;transition:transform .5s}
+.fcard.flipped{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;border:1px solid var(--line);background:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:1.25rem;text-align:center}
+.face.back{transform:rotateY(180deg);text-align:left;align-items:flex-start;background:var(--card)}
+.face .term{font-family:var(--fh);font-size:2rem;font-weight:800}
+.face small{color:var(--muted);margin-top:.5rem}
+.face p{margin:0}
+.meta{color:var(--muted);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){.fcard{transition:none}}
+
+/* match */
+.match{display:grid;grid-template-columns:1fr 1.4fr;gap:1rem}
+.col{display:flex;flex-direction:column;gap:.5rem}
+.mitem{display:flex;gap:.6rem;align-items:center;text-align:left;border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:.65rem .8rem;cursor:pointer;min-height:48px;line-height:1.35}
+.mitem.sel{border-color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.mitem.done{background:var(--ok-bg);border-color:var(--ok);cursor:default;opacity:.85}
+.mitem.right{font-size:.95rem}
+@media (max-width:640px){.match{grid-template-columns:1fr}.match .col:first-child{position:sticky;top:calc(env(safe-area-inset-top,0px) + 58px);background:var(--card);z-index:2;padding:.25rem 0;max-height:40vh;overflow:auto}}
+.hint{min-height:1.6em;font-weight:700;margin:.25rem 0 1rem}
+.hint.good{color:var(--ok)}.hint.bad{color:var(--bad)}
+.shake{animation:shake .35s}
+@keyframes shake{25%{transform:translateX(-5px)}50%{transform:translateX(5px)}75%{transform:translateX(-3px)}}
+@media (prefers-reduced-motion:reduce){.shake{animation:none;outline:2px solid var(--bad)}}
+.result{background:var(--ok-bg);border-radius:12px;padding:1rem;margin-top:1rem}
+.result strong{font-family:var(--fh);font-size:1.4rem;display:block}
+
+/* sort */
+.pool{display:flex;flex-wrap:wrap;gap:.45rem;margin:0 0 .5rem;min-height:2rem}
+.chip{border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:.5rem .75rem;cursor:pointer;text-align:left;line-height:1.3;max-width:100%}
+.chip.sel{border-color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.pool{max-height:none}
+@media (max-width:640px){.pool{max-height:38vh;overflow:auto;padding:.3rem;border:1px dashed var(--line);border-radius:12px}}
+.buckets{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem}
+.buckets.three{grid-template-columns:repeat(3,1fr)}
+@media (max-width:640px){.buckets,.buckets.three{grid-template-columns:1fr 1fr}}
+.bucket{border:1px solid var(--line);border-top:6px solid var(--muted);border-radius:12px;padding:.6rem;background:var(--card);cursor:pointer;min-height:110px}
+.bucket.c-p{border-top-color:var(--p)}.bucket.c-i{border-top-color:var(--i)}.bucket.c-e{border-top-color:var(--e)}.bucket.c-s{border-top-color:var(--s)}
+.bhead{display:block;width:100%;border:0;background:none;text-align:left;font-family:var(--fh);font-weight:800;font-size:1.05rem;padding:.2rem 0;cursor:pointer}
+.bdesc{font-size:.85rem;color:var(--muted);margin:0 0 .4rem}
+.blist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.3rem}
+.blist li{font-size:.88rem;background:var(--paper);border-radius:8px;padding:.3rem .5rem;line-height:1.3}
+.c-p .blist li{background:var(--p-bg)}.c-i .blist li{background:var(--i-bg)}.c-e .blist li{background:var(--e-bg)}.c-s .blist li{background:var(--s-bg)}
+
+/* reveal definitions table */
+.deflist{display:grid;gap:.75rem}
+.deflist details{border:1px solid var(--line);border-radius:12px;padding:.7rem 1rem;background:var(--paper)}
+.deflist summary{cursor:pointer;font-weight:700}
+.deflist ul{margin:.5rem 0 0;padding-left:1.2rem}
+
+/* quiz + effects */
+.qcount{color:var(--muted);font-size:.9rem;margin-bottom:.3rem}
+.qtext{font-size:1.15rem;font-weight:700;margin:0 0 1rem}
+.opts{display:grid;gap:.5rem}
+.opt{border:1px solid var(--line);background:var(--paper);border-radius:12px;padding:.7rem .9rem;text-align:left;cursor:pointer;min-height:48px}
+.opt.right{background:var(--ok-bg);border-color:var(--ok)}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad)}
+.opt:disabled{cursor:default;color:var(--ink)}
+.explain{margin-top:1rem;padding:.8rem 1rem;border-radius:10px;background:var(--paper);border:1px dashed var(--line)}
+.stmt{font-size:1.15rem;font-weight:700;padding:1rem;border-radius:12px;background:var(--paper);border:1px solid var(--line);margin-bottom:1rem}
+.choose h4{margin:.5rem 0 .4rem;font-size:.95rem;color:var(--muted);font-weight:700}
+
+/* gap fill */
+.gaptext{line-height:2.3}
+.gaptext input{width:9.5em;border:0;border-bottom:2px solid var(--muted);background:var(--paper);border-radius:6px 6px 0 0;padding:.1rem .4rem}
+.gaptext input.right{border-color:var(--ok);background:var(--ok-bg)}
+.gaptext input.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.bank{display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 1rem}
+.bank span{border:1px dashed var(--muted);border-radius:8px;padding:.15rem .55rem;font-size:.92rem}
+
+/* planner */
+.scenario{background:var(--paper);border-radius:12px;padding:1rem;margin:0 0 1rem;border:1px solid var(--line)}
+.scenario strong{display:block;margin-bottom:.2rem}
+.plan{display:grid;gap:.75rem}
+.prow{display:grid;grid-template-columns:2.2rem 1fr;gap:.6rem;align-items:start;border-left:4px solid var(--line);padding-left:.6rem}
+.prow.r-p{border-left-color:var(--p)}.prow.r-i{border-left-color:var(--i)}.prow.r-e{border-left-color:var(--e)}.prow.r-s{border-left-color:var(--s)}
+.prow label{display:block;font-size:.88rem;color:var(--muted);font-weight:700;margin-bottom:.2rem}
+input[type=text],textarea{width:100%;border:1px solid var(--line);background:var(--paper);border-radius:10px;padding:.55rem .7rem}
+textarea{min-height:90px;resize:vertical}
+.levels{display:grid;gap:.5rem}
+.level{display:grid;grid-template-columns:auto 1fr;gap:.6rem;align-items:start;border:1px solid var(--line);border-radius:12px;padding:.7rem .9rem;background:var(--paper);cursor:pointer}
+.level.on{border-color:var(--ok);background:var(--ok-bg)}
+.level b{display:block}
+.checks{list-style:none;padding:0;margin:.5rem 0 0;display:grid;gap:.4rem}
+.checks label{display:flex;gap:.6rem;align-items:flex-start;cursor:pointer}
+.checks input{width:1.2rem;height:1.2rem;margin-top:.2rem;flex:none;accent-color:var(--ok)}
+
+/* exam */
+.exq{border:1px solid var(--line);border-radius:16px;background:var(--card);margin:0 0 1rem;overflow:hidden}
+.exq > summary{list-style:none;cursor:pointer;padding:1rem 1.25rem;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center}
+.exq > summary::-webkit-details-marker{display:none}
+.exq > summary .marks{font-family:var(--fh);font-weight:800;color:var(--muted);white-space:nowrap}
+.exq .body{padding:0 1.25rem 1.25rem}
+.scoreline{font-weight:700;margin-top:.6rem}
+.model{background:var(--paper);border-radius:10px;padding:.8rem 1rem;margin-top:.8rem;font-size:.97rem}
+
+.timer{font-family:var(--fh);font-weight:800;font-size:1.6rem;min-width:4.5ch}
+footer{max-width:880px;margin:0 auto;padding:0 1rem 2rem;color:var(--muted);font-size:.88rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ===== visual upgrade ===== */
+:root{--banner:#14293a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--banner:#1d3a4e}}
+:root[data-theme="dark"]{--banner:#1d3a4e}
+.pies-stripe{background:linear-gradient(90deg,#1d7a55 0 25%,#2f5fbf 25% 50%,#b3345a 50% 75%,#9a6500 75%)}
+.banner{position:relative;overflow:hidden;background:var(--banner);color:#fff;border-radius:22px;padding:1.7rem 1.7rem 1.9rem;margin:0 0 1.5rem;display:grid;grid-template-columns:1fr auto;gap:1.25rem;align-items:center}
+.banner::after{content:'';position:absolute;left:0;right:0;bottom:0;height:7px;background:linear-gradient(90deg,#1d7a55 0 25%,#2f5fbf 25% 50%,#b3345a 50% 75%,#9a6500 75%)}
+.banner::before{content:'';position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.05)}
+.banner .bp{color:#a9c9de;margin:0 0 .25rem}
+.banner h2{color:#fff;margin:0 0 .4rem;font-size:clamp(1.7rem,4.4vw,2.4rem)}
+.banner .lead{color:#d4e3ec;margin:0}
+.ico{width:88px;height:88px;border-radius:22px;background:rgba(255,255,255,.1);display:grid;place-items:center;position:relative;z-index:1}
+.ico svg{width:48px;height:48px;stroke:#fff;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:560px){.banner{grid-template-columns:1fr;padding:1.3rem 1.2rem 1.6rem}.banner .ico{display:none}}
+.panel{border-radius:20px;padding:1.4rem;box-shadow:0 1px 0 var(--line)}
+.panel h3{font-size:1.35rem}
+.kicker{display:inline-flex;align-items:center;gap:.35rem;font-size:.82rem;font-weight:700;padding:.22rem .65rem;border-radius:999px;background:var(--i-bg);color:var(--i);margin:0 0 .55rem}
+.kicker svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.chip,.mitem,.opt{transition:transform .15s, background .15s}
+.chip:hover,.mitem:not(.done):hover,.opt:not(:disabled):hover{transform:translateY(-1px);border-color:var(--muted)}
+.chip.sel,.mitem.sel{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mitem.sel .tag{outline:2px solid var(--paper)}
+.bucket{transition:background .15s}
+.bucket:hover{background:var(--paper)}
+.result{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;align-items:center;border:1px solid var(--ok)}
+.result .badge{grid-row:span 3;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--ok);color:var(--card);font-family:var(--fh);font-weight:800;font-size:1.15rem}
+.result p{margin:0}.result .btn{justify-self:start;margin-top:.4rem}
+/* hero */
+.hero h1{font-size:clamp(2.4rem,7vw,4rem)}
+.ecg{display:block;width:100%;height:46px;margin:-.5rem 0 1.5rem;stroke:var(--e);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.ecg path{stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s ease-out .2s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.ecg path{animation:none;stroke-dashoffset:0}}
+.pies div{box-shadow:0 6px 0 rgba(0,0,0,.12)}
+/* home cards */
+.ogrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.ocard{position:relative;overflow:hidden;display:flex;flex-direction:column;gap:.5rem;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:1.2rem 1.2rem 1.1rem;text-decoration:none;color:var(--ink);transition:transform .15s,border-color .15s}
+.ocard:hover{transform:translateY(-3px);border-color:var(--ink)}
+.ocard .ctop{display:flex;justify-content:space-between;align-items:center}
+.ocard .oi{width:52px;height:52px;border-radius:15px;background:var(--banner);display:grid;place-items:center}
+.ocard .oi svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ocard strong{font-family:var(--fh);font-size:1.2rem;line-height:1.2}
+.ocard small{color:var(--muted);font-size:.92rem;line-height:1.4}
+.ocard .big{position:absolute;right:.6rem;bottom:-1.6rem;font-family:var(--fh);font-weight:800;font-size:5.5rem;line-height:1;color:var(--line);opacity:.4;pointer-events:none}
+.ring{width:54px;height:54px}
+.ring circle{fill:none;stroke-width:6}
+.ring .bg{stroke:var(--line)}.ring .fg{stroke:var(--ok);stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .6s}
+.ring text{font:700 13px var(--fb);fill:var(--ink)}
+.practice a{display:flex;gap:.8rem;align-items:center;border-radius:18px}
+.practice .oi{width:46px;height:46px;flex:none;border-radius:13px;display:grid;place-items:center}
+.practice .oi svg{width:24px;height:24px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.practice a:nth-child(1) .oi{background:#2f5fbf}.practice a:nth-child(2) .oi{background:#b3345a}.practice a:nth-child(3) .oi{background:#1d7a55}
+.confetti{position:fixed;inset:0;pointer-events:none;z-index:50;overflow:hidden}
+.confetti i{position:absolute;top:-12px;width:10px;height:10px;border-radius:2px}
+</style>
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <a class="brand" href="#home" aria-label="Topic 1 revision home"><span class="mini" aria-hidden="true"><i></i><i></i><i></i><i></i></span><b>Topic 1</b></a>
+  <nav aria-label="Sections">
+    <a href="#home">Home</a>
+    <a href="#definitions">Definitions</a>
+    <a href="#needs">PIES needs</a>
+    <a href="#settings">Meeting needs</a>
+    <a href="#wellbeing">Psychological well-being</a>
+    <a href="#effects">Effects of ill-health</a>
+    <a href="#exam">Exam practice</a>
+    <a href="#quiz">Quick quiz</a>
+    <a href="#braindump">Brain dump</a>
+  </nav>
+</div></header>
+
+<main>
+<!-- HOME -->
+<section class="view" id="v-home">
+  <div class="hero">
+    <div>
+      <p class="bp">CCEA AS Health and Social Care · Unit 3 Health and Well-being</p>
+      <h1>Concepts of health and well&#8209;being</h1>
+      <p class="lead">Work through each learning outcome, then test yourself with exam-style questions. Your scores are saved on this device so you can see what still needs work.</p>
+    </div>
+    <div class="pies" aria-hidden="true">
+      <div><b>P</b><span>Physical</span></div><div><b>I</b><span>Intellectual</span></div>
+      <div><b>E</b><span>Emotional</span></div><div><b>S</b><span>Social</span></div>
+    </div>
+  </div>
+  <svg class="ecg" viewBox="0 0 1000 46" preserveAspectRatio="none" aria-hidden="true"><path d="M0 26 H380 L400 26 L415 6 L432 42 L448 14 L460 26 H560 L575 18 L590 26 H1000"/></svg>
+  <h2>Learning outcomes</h2>
+  <div class="ogrid" id="outcomes"></div>
+  <h2 style="margin-top:2rem">Test yourself</h2>
+  <div class="practice" id="practiceLinks"></div>
+  <p style="margin-top:2rem"><button class="btn ghost" type="button" id="resetAll">Reset my progress</button></p>
+</section>
+
+<!-- DEFINITIONS -->
+<section class="view" id="v-definitions" hidden>
+  <p class="bp">BP1</p>
+  <h2>Defining health concepts</h2>
+  <p class="lead">You need to define health, ill-health, disease, stress-related illness, mental health and mental illness. Definitions are usually worth 2 marks, so include two clear points.</p>
+  <div class="panel">
+    <p class="kicker" data-k>Retrieval practice</p><h3>Flashcards</h3>
+    <p class="how">Say the definition out loud before you flip. Mark “Again” if you missed a key point; those cards come back until you know them.</p>
+    <div id="flash"></div>
+  </div>
+  <div class="panel">
+    <p class="kicker" data-k>Matching</p><h3>Match the term to its definition</h3>
+    <div id="matchDefs"></div>
+  </div>
+  <div class="panel">
+    <p class="kicker" data-k>Exam technique</p><h3>What earns the 2 marks?</h3>
+    <p class="how">Open each one to see the two points an examiner is looking for.</p>
+    <div class="deflist" id="defPoints"></div>
+  </div>
+</section>
+
+<!-- NEEDS -->
+<section class="view" id="v-needs" hidden>
+  <p class="bp">BP2</p>
+  <h2>The PIES needs of service users</h2>
+  <p class="lead">Service users have physical, intellectual, emotional and social needs. Many are shared by everyone, but how they show up depends on the service user group.</p>
+  <div class="panel">
+    <p class="kicker" data-k>Categorising</p><h3>Sort the needs into PIES</h3>
+    <p class="how">Tap a need, then tap the box it belongs in.</p>
+    <div id="piesSort"></div>
+  </div>
+  <div class="panel">
+    <p class="kicker" data-k>Application</p><h3>Which service user group?</h3>
+    <p class="how">Each card describes a specific way of meeting needs. Decide which group it is most suited to.</p>
+    <div id="groupSort"></div>
+  </div>
+</section>
+
+<!-- SETTINGS -->
+<section class="view" id="v-settings" hidden>
+  <p class="bp">BP3</p>
+  <h2>Meeting needs in different settings</h2>
+  <p class="lead">For each setting, match the need to the way staff could meet it. Then plan a 12-mark answer.</p>
+  <div class="tip"><p><strong>Read the question carefully.</strong> You must adapt your answer to the service user and the setting in the question. “Providing meals” is vague; “offering a choice of nutritious meals at protected mealtimes on the ward” is specific.</p></div>
+  <div class="panel">
+    <p class="kicker" data-k>Matching</p><h3>Match the need to how it is met</h3>
+    <div class="seg" id="settingPick" role="group" aria-label="Choose a setting"></div>
+    <div id="settingMatch"></div>
+  </div>
+  <div class="panel">
+    <p class="kicker" data-k>Exam planning</p><h3>Plan a 12-mark answer</h3>
+    <p class="how">Pick a scenario. Fill in one need for each PIES type and explain how staff in that setting would meet it. Then check your plan against the level descriptors.</p>
+    <div class="seg" id="planPick" role="group" aria-label="Choose a scenario"></div>
+    <div id="planner"></div>
+  </div>
+</section>
+
+<!-- WELLBEING -->
+<section class="view" id="v-wellbeing" hidden>
+  <p class="bp">BP4</p>
+  <h2>Physical health and psychological well-being</h2>
+  <p class="lead">Evaluate the potential impact of physical health and ill-health on psychological well-being.</p>
+  <div class="tip"><p><strong>Evaluate means weigh it up.</strong> Give the expected impact, then use “However…” to show the relationship is not always direct.</p></div>
+  <div class="panel">
+    <p class="kicker" data-k>Evaluation</p><h3>Sort the impacts</h3>
+    <p class="how">Four boxes: the expected impact of good health and of ill-health, and the “however” points for each.</p>
+    <div id="wbSort"></div>
+  </div>
+  <div class="panel">
+    <p class="kicker" data-k>Cloze recall</p><h3>Fill the gaps</h3>
+    <p class="how">Use the word bank. Each word is used once.</p>
+    <div id="gapFill"></div>
+  </div>
+</section>
+
+<!-- EFFECTS -->
+<section class="view" id="v-effects" hidden>
+  <p class="bp">BP5</p>
+  <h2>Effects of ill-health on individuals and families</h2>
+  <p class="lead">Ill-health can affect income, leisure activities, relationships, education and employment, for the person who is ill and for their family. Some effects are positive.</p>
+  <div class="panel">
+    <p class="kicker" data-k>Categorising</p><h3>Who and what?</h3>
+    <p class="how">For each effect, decide who it affects and which area of life it is about.</p>
+    <div id="effectsGame"></div>
+  </div>
+</section>
+
+<!-- EXAM -->
+<section class="view" id="v-exam" hidden>
+  <h2>Exam practice</h2>
+  <p class="lead">Original practice questions in the style of the Unit 3 paper. Write your answer, then open the mark scheme and tick each point you made. Your answers are saved on this device.</p>
+  <div id="examList"></div>
+</section>
+
+<!-- QUIZ -->
+<section class="view" id="v-quiz" hidden>
+  <h2>Quick quiz</h2>
+  <p class="lead">Ten mixed questions from across Topic 1. Each attempt draws a different set.</p>
+  <div class="panel" id="quiz"></div>
+</section>
+
+<!-- BRAIN DUMP -->
+<section class="view" id="v-braindump" hidden>
+  <h2>Brain dump</h2>
+  <p class="lead">Pick an area. Write down everything you can remember in three minutes, without your notes. Then check what you included and what you missed.</p>
+  <div class="panel">
+    <div class="seg" id="dumpPick" role="group" aria-label="Choose an area"></div>
+    <div id="dump"></div>
+  </div>
+</section>
+</main>
+<footer>Built from the Topic 1 class notes, exam notes and student activities booklet. Practice questions are original and written in the style of the CCEA paper. Progress is stored only in this browser.</footer>
+
+<script>
+/* ---------- helpers ---------- */
+function h(tag, props, ...kids){
+  const e=document.createElement(tag);
+  for(const [k,v] of Object.entries(props||{})){
+    if(v==null||v===false) continue;
+    if(k==='class') e.className=v;
+    else if(k.startsWith('on')) e.addEventListener(k.slice(2),v);
+    else if(k==='html') e.innerHTML=v;
+    else e.setAttribute(k, v===true?'':v);
+  }
+  for(const c of kids.flat()){ if(c==null||c===false) continue; e.append(c.nodeType?c:document.createTextNode(c)); }
+  return e;
+}
+const $=(s,r=document)=>r.querySelector(s);
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function shake(el){el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');}
+const TAGNAME={p:'Physical',i:'Intellectual',e:'Emotional',s:'Social'};
+
+/* ---------- storage ---------- */
+const KEY='hsc-u3-topic1-v1';
+let state={scores:{},answers:{},ticks:{},levels:{}};
+try{const raw=localStorage.getItem(KEY); if(raw){const s=JSON.parse(raw); state=Object.assign(state,s);}}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+function record(id,pct,overwrite){pct=Math.max(0,Math.min(100,Math.round(pct)));
+  if(overwrite||!(state.scores[id]>=pct)){state.scores[id]=pct;save();} renderHome();}
+
+/* ---------- content ---------- */
+const DEFS=[
+ {term:'Health',def:'A positive state of physical, mental and social well-being, not merely the absence of disease. Health has more than one dimension: physical, social, emotional, mental, spiritual and environmental.',short:'A positive state of well-being with several dimensions, not just the absence of disease.',points:['It is a positive state of well-being (physical, mental and social)','It is not merely the absence of disease or infirmity (WHO)'],},
+ {term:'Ill-health',def:'A state in which a person is unable to function normally because of the presence of something negative, such as a disease, or the absence of something positive, such as adequate nutrition.',short:'Being unable to function normally because something negative is present or something positive is missing.',points:['The person is unable to function normally','Caused by the presence of something negative (e.g. disease) or the absence of something positive (e.g. adequate nutrition)']},
+ {term:'Disease',def:'A diagnostic label given to a set of signs and symptoms. It is usually long-term and can result from injuries, accidents or infections, e.g. coronary heart disease or Alzheimer’s disease.',short:'A diagnostic label given to a set of signs and symptoms, usually long-term.',points:['A diagnostic label given to a set of signs and symptoms','Usually long-term, e.g. coronary heart disease or Alzheimer’s disease']},
+ {term:'Stress-related illness',def:'Physical symptoms, such as headaches, palpitations and stomach problems, caused by the body’s reaction when a person feels anxious and unable to cope with stressors like work, money or family problems.',short:'Physical symptoms such as headaches caused by being unable to cope with stressors.',points:['Physical symptoms, e.g. headaches, palpitations, stomach problems','Caused by feeling anxious or unable to cope with stressors such as work, finances or family problems']},
+ {term:'Mental health',def:'Not just the absence of mental illness, but a form of subjective well-being in which a person feels able to cope with life and in control, and can face challenges and take on responsibility.',short:'Subjective well-being in which a person feels able to cope with life and in control.',points:['Not just the absence of mental illness','A form of subjective well-being where the person feels able to cope with life / in control']},
+ {term:'Mental illness',def:'A psychological condition characterised by abnormal, often undesired behaviour, frequently linked to chemical changes in the brain, e.g. depression or schizophrenia.',short:'A psychological condition with abnormal behaviour, often linked to chemical changes in the brain.',points:['A psychological condition characterised by abnormal, often undesired behaviour','Often linked to chemical changes in the brain, e.g. depression or schizophrenia']},
+];
+
+const PIES_ITEMS=[
+ ['Nutrition','p'],['Sleep','p'],['Hygiene','p'],['Shelter and warmth','p'],['Exercise and mobility','p'],['Freedom from pain','p'],['Medication','p'],
+ ['Stimulation','i'],['Knowledge and understanding','i'],['Learning new skills','i'],['Occupation (something to do)','i'],['Information about their condition','i'],
+ ['Feeling loved and cared for','e'],['Sense of belonging','e'],['Feeling of stability','e'],['Sense of autonomy and control','e'],['Positive self-esteem','e'],['Safety and security','e'],['Being treated with dignity','e'],['Freedom to express feelings','e'],
+ ['Contact with other people','s'],['Relationships with family and friends','s'],['Interaction in the community','s'],['Developing social skills','s'],['Making friends','s'],
+].map(([text,cat])=>({text,cat}));
+const PIES_CATS=['p','i','e','s'].map(c=>({id:c,label:TAGNAME[c],cls:'c-'+c}));
+
+const GROUPS=[
+ {id:'ch',label:'Children'},{id:'op',label:'Older people'},{id:'il',label:'Those with illnesses'},
+ {id:'pd',label:'Physical disabilities'},{id:'ld',label:'Learning difficulties'},{id:'mh',label:'Mental health needs'}];
+const GROUP_ITEMS=[
+ ['Star charts to praise achievements','ch'],['Outdoor climbing frames to develop gross motor skills','ch'],
+ ['Newspapers at a day centre to use as talking points','op'],['Companionship for someone who lives alone and rarely has visitors','op'],
+ ['Explaining treatment side effects on a hospital ward','il'],['Pain relief and adjustable beds in a hospice','il'],
+ ['Widened door frames and wheelchair access','pd'],['Handrails and shower seats to support self-care','pd'],
+ ['Information in an accessible form, e.g. Makaton or larger font','ld'],['Support to process new or complex information','ld'],
+ ['A befriending scheme and access to advocacy services','mh'],['Appointments with a psychiatrist to understand their illness','mh'],
+].map(([text,cat])=>({text,cat}));
+
+const SETTINGS=[
+ {id:'nursery',name:'Nursery / primary school',who:'children',pairs:[
+  ['p','Developing gross motor skills','Outdoor play equipment such as slides and climbing frames'],
+  ['p','Hygiene','Teaching proper handwashing, with posters and hand sanitiser around the school'],
+  ['i','Stimulation','Asking questions that make children think, e.g. what might happen at the end of a story'],
+  ['i','Imagination and creativity','Role-play areas such as playing house, puppets, drama and art'],
+  ['e','Self-esteem','Praising achievements verbally or with star charts'],
+  ['e','Sense of belonging','Personalised spaces such as named coat hooks; including every child in group performances'],
+  ['s','Developing social skills','Encouraging turn-taking and saying please and thank you, with adults modelling good manners'],
+  ['s','Making friends','Group work, shared games and giving children roles in structured play']]},
+ {id:'hospital',name:'Hospital ward',who:'patients with illnesses',pairs:[
+  ['p','Adequate nutrition','Nutritious balanced meals with a choice of dishes, and protected mealtimes'],
+  ['p','Adequate sleep','Grouping medication, changing and closing blinds into one visit to reduce disturbances'],
+  ['i','Mental stimulation','Access to radio, TV, internet, magazines and newspapers'],
+  ['i','Knowledge about their condition','Explaining the condition, treatment and side effects, using interpreters if needed'],
+  ['e','Feeling of security','Buzzers at ward entrances, window locks and reassurance from nurses and doctors'],
+  ['e','Spiritual needs','A multi-faith prayer room and visits from a priest or minister'],
+  ['s','Contact with family','Visiting hours so partners, children and friends can visit'],
+  ['s','Interaction with staff and other patients','Talking to patients about their interests and using a common room if their condition allows']]},
+ {id:'hospice',name:'Hospice',who:'patients with life-threatening illnesses',pairs:[
+  ['p','Freedom from pain','Pain management and medication'],
+  ['p','Physical comfort','Aids and adaptations such as hoists, adjustable beds and handrails'],
+  ['i','Knowledge and understanding of condition','Nurses explain treatment and side effects and answer questions'],
+  ['i','Occupation','Volunteers provide magazines, art classes or quizzes, depending on the condition'],
+  ['e','The ability to cope with death','A counselling service and active listening by hospice staff'],
+  ['e','Dignity','Discreet help with toileting and bathing so the client is clean and comfortable'],
+  ['s','Spending time with family and friends','Flexible visiting and space for family occasions so they can be together'],
+  ['s','Interaction with other clients','A communal area with chairs positioned to encourage conversation']]},
+ {id:'nursing',name:'Nursing home',who:'older people with health needs',pairs:[
+  ['p','Mobility','Specialist moving and handling equipment and visits from a physiotherapist'],
+  ['p','Physical safety','Locked doors with buzzer entry, bed rails and emergency call buttons'],
+  ['i','Occupation and stimulation','Organised activities residents enjoy, such as bingo or painting'],
+  ['i','Effective communication','Keeping residents informed about their health and answering their questions'],
+  ['e','Feeling valued','Staff spending time talking to residents and asking how they feel'],
+  ['e','Dignity','Treating residents with respect and dealing discreetly with incontinence'],
+  ['s','Interaction with others','Daily chances to chat with nurses and residents, plus family visits'],
+  ['s','Supportive relationships','Building close, trusting relationships with carers and other residents']]},
+ {id:'daycare',name:'Day care centre',who:'older people living at home',pairs:[
+  ['p','Hygiene','The chance to have a bath with assistance from care staff'],
+  ['p','Nutrition','A well-balanced, nutritious meal at midday'],
+  ['i','Personal support','Help reading official letters and advice from social workers'],
+  ['i','Keeping up to date','Newspapers and journals that become talking points'],
+  ['e','Happiness','A positive, homely environment where users feel content'],
+  ['e','Feeling respected and valued','Staff take time to ask how users are and help with any concerns'],
+  ['s','Opportunities to meet others','Group games and activities organised by staff'],
+  ['s','Companionship','A place to build friendships with people in a similar situation, reducing isolation']]},
+ {id:'mental',name:'Mental health services',who:'service users with mental health problems',pairs:[
+  ['p','Accommodation','Sheltered housing schemes'],
+  ['p','Medication and treatment','Staff administer medication and help service users make appointments with the doctor'],
+  ['i','Stimulation','Creative or therapeutic activities and hobbies such as reading'],
+  ['i','Knowledge of their illness','Appointments with a GP, psychologist or psychiatrist to discuss their illness'],
+  ['e','Sense of belonging','Self-help groups run by voluntary organisations'],
+  ['e','Empowerment','Supporting service users to make their own decisions and develop independent living skills'],
+  ['s','Interpersonal interaction','Social outings, e.g. to a restaurant or cinema, to practise social skills'],
+  ['s','Friendship and relationships','Home visits and a befriending scheme']]},
+ {id:'supported',name:'Supported living',who:'adults with learning disabilities',pairs:[
+  ['p','Personal care','Staff help with washing and cooking where needed'],
+  ['p','Getting out and about','Staff help service users get to college or work'],
+  ['i','Knowledge and understanding','Information in an accessible form, e.g. easy-read or Makaton'],
+  ['i','Learning new skills','Teaching everyday skills such as shopping and managing money step by step'],
+  ['e','Sense of autonomy','Encouraging service users to do as much as possible themselves, e.g. their own laundry'],
+  ['e','Self-esteem','Praising efforts and progress towards independence'],
+  ['s','Interaction outside the home','Attending day centres, clubs or college'],
+  ['s','Relationships with family','Supporting regular family visits and phone or video calls']]},
+];
+
+const PLANS=[
+ {id:'margaret',title:'Margaret, residential care',setting:'residential care home',text:'Margaret, 84, has moved into a residential care home after a fall at home. She walks with a frame, misses her neighbours and loves doing crosswords.',q:'Analyse how Margaret’s needs could be met by staff in the care home. [12]'},
+ {id:'josh',title:'Josh, primary school',setting:'primary school',text:'Josh, 6, has a learning disability and has just started at his local primary school. He finds it hard to concentrate in class and has not yet made friends.',q:'Analyse how Josh’s needs could be met by staff in the primary school. [12]'},
+ {id:'ruth',title:'Ruth, hospice',setting:'hospice',text:'Ruth, 52, is receiving end-of-life care in a hospice. She is often in pain, worries about her two teenage daughters and wants to stay in control of decisions about her care.',q:'Analyse how Ruth’s needs could be met by the hospice staff. [12]'},
+];
+
+const WB_CATS=[
+ {id:'gp',label:'Good health: positive impact',desc:'What we expect',cls:'c-p'},
+ {id:'gn',label:'Good health, however…',desc:'Not always positive',cls:'c-s'},
+ {id:'in',label:'Ill-health: negative impact',desc:'What we expect',cls:'c-e'},
+ {id:'ip',label:'Ill-health, however…',desc:'Not always negative',cls:'c-i'}];
+const WB_ITEMS=[
+ ['High self-esteem','gp'],['Positive self-concept because they look and feel well','gp'],['A sense of autonomy because their lifestyle choices are keeping them healthy','gp'],['Happiness and freedom from worry','gp'],['Feels confident and able to cope with daily life','gp'],
+ ['May still feel unhappy or stressed','gn'],['May still have mental health problems such as depression','gn'],['Low self-esteem caused by bereavement or bullying','gn'],['Low self-concept after a relationship breaks down','gn'],
+ ['Anxious and afraid, e.g. about an operation or dying','in'],['Grief at losing mobility or independence','in'],['Feels a burden on their family','in'],['Feels disempowered, with no control over what is happening','in'],['Withdrawn and isolated','in'],['Lack of motivation leading to boredom','in'],
+ ['Finds inner strength and keeps a positive self-concept','ip'],['Determined to beat the illness and develops resilience','ip'],['Feels loved and cared for by family and friends','ip'],['Gains comfort from becoming more spiritual','ip'],
+].map(([text,cat])=>({text,cat}));
+
+const GAP=[
+ 'Good physical health is often linked to high ',['self-esteem'],' and a positive self-concept. A healthy person may have a sense of ',['autonomy'],' because they feel in control of their lifestyle choices, and they may feel ',['confident'],' and able to ',['cope'],' with the demands of daily life. However, the relationship is not always direct. A physically healthy person may still have mental health problems such as ',['depression'],', or low self-esteem caused by ',['bereavement'],' or bullying. Ill-health can make a person feel a ',['burden'],' on their family, and they may become withdrawn and ',['isolated'],'. On the other hand, some people find inner ',['strength'],' and develop psychological ',['resilience'],' when they are ill.'];
+
+const AREAS=[{id:'income',label:'Income'},{id:'leisure',label:'Leisure activities'},{id:'relationships',label:'Relationships'},{id:'education',label:'Education'},{id:'employment',label:'Employment'}];
+const WHO=[{id:'ind',label:'The individual who is ill'},{id:'fam',label:'Their family'}];
+const EFFECTS=[
+ ['Sick pay is usually much less than full pay.','ind','income','neg'],
+ ['Extra heating costs from being at home all day.','ind','income','neg'],
+ ['Long-term dependence on benefits may lead to poverty.','ind','income','neg'],
+ ['Too tired to take part in sport as often as before.','ind','leisure','neg'],
+ ['Takes up a gentler activity such as swimming, painting or pilates.','ind','leisure','pos'],
+ ['Develops strong friendships with people in a similar situation.','ind','relationships','pos'],
+ ['Pushes people away or resents the help they offer.','ind','relationships','neg'],
+ ['Misses school and falls behind the rest of the class.','ind','education','neg'],
+ ['Misses out on a university place because attendance is taken into account.','ind','education','neg'],
+ ['Has to reduce hours and go part-time.','ind','employment','neg'],
+ ['Changes to a less strenuous type of job.','ind','employment','neg'],
+ ['Partner cannot do overtime because they are providing care.','fam','income','neg'],
+ ['No money for school trips or treats for the children.','fam','income','neg'],
+ ['The family misses out on holidays and outings together.','fam','leisure','neg'],
+ ['Children cannot get to their clubs because nobody can drive them.','fam','leisure','neg'],
+ ['The family becomes emotionally closer.','fam','relationships','pos'],
+ ['Arguments with the partner due to stress and worry.','fam','relationships','neg'],
+ ['Children worry and lose concentration at school.','fam','education','neg'],
+ ['The parent is at home more and helps with homework, so attainment improves.','fam','education','pos'],
+ ['Days off to provide care affect the partner’s chances of promotion.','fam','employment','neg'],
+ ['A teenager takes a part-time job because the main earner is ill.','fam','employment','neg'],
+].map(([text,who,area,val])=>({text,who,area,val}));
+
+const QUIZ=[
+ {q:'Which definition best describes health?',o:['A positive state of well-being, not merely the absence of disease','Having no illness or injury','Being physically fit','Feeling happy most of the time'],a:0,x:'Health is a positive concept with several dimensions. It is more than the absence of disease.'},
+ {q:'“A diagnostic label given to a set of signs and symptoms” defines…',o:['Disease','Ill-health','Mental illness','Stress-related illness'],a:0,x:'Disease is a diagnostic label, usually long-term, e.g. coronary heart disease.'},
+ {q:'Palpitations and stomach problems caused by worry about debts are an example of…',o:['Stress-related illness','Mental illness','Disease','Poor mental health'],a:0,x:'Stress-related illness means physical symptoms caused by being unable to cope with stressors such as money problems.'},
+ {q:'Ill-health can be caused by the absence of something positive. Which is an example?',o:['Inadequate nutrition','A virus','An accident','A genetic condition'],a:0,x:'The absence of adequate nutrition is the classic example. A virus or accident is the presence of something negative.'},
+ {q:'Mental health is best described as…',o:['Subjective well-being in which a person feels able to cope with life','Never having had a mental illness','Being intelligent','Having a calm personality'],a:0,x:'Mental health is not just the absence of mental illness. It is feeling able to cope and in control.'},
+ {q:'Mental illness is often linked to…',o:['Chemical changes in the brain','Lack of exercise','Poor hygiene','Low income'],a:0,x:'Mental illness is a psychological condition often linked to chemical changes in the brain, e.g. schizophrenia or depression.'},
+ {q:'A sense of belonging is which type of need?',o:['Emotional','Social','Intellectual','Physical'],a:0,x:'In your PIES overview, belonging is an emotional need, along with self-esteem, security and feeling loved.'},
+ {q:'Occupation (having something meaningful to do) is which type of need?',o:['Intellectual','Physical','Social','Emotional'],a:0,x:'Occupation and stimulation are intellectual needs.'},
+ {q:'Interaction in the community is which type of need?',o:['Social','Emotional','Intellectual','Physical'],a:0,x:'Contact with others, relationships and community interaction are social needs.'},
+ {q:'Named coat hooks in a nursery mainly meet a child’s need for…',o:['A sense of belonging','Hygiene','Stimulation','Mobility'],a:0,x:'Personalised spaces help children feel they belong (emotional need).'},
+ {q:'On a hospital ward, grouping medication, changing and closing blinds into one visit meets the need for…',o:['Adequate sleep','Stimulation','Security','Nutrition'],a:0,x:'Fewer disturbances mean patients get more sleep.'},
+ {q:'A multi-faith prayer room in a hospital meets which need?',o:['Spiritual (emotional) need','Intellectual need','Physical need','Need for warmth'],a:0,x:'Spiritual and religious needs are listed under emotional needs in your notes.'},
+ {q:'High-protein shakes and nasogastric feeding in a hospice meet the need for…',o:['Nutrition','Dignity','Occupation','Freedom from pain'],a:0,x:'Treatment side effects can reduce appetite, so special diets help meet nutritional needs.'},
+ {q:'The main focus of a day care centre for older people is usually…',o:['Social needs','Physical health needs','Intellectual needs','Spiritual needs'],a:0,x:'Day centre users live at home and may be socially isolated, so the focus is on social needs.'},
+ {q:'The main focus of a nursing home is usually…',o:['Physical (health) needs','Social needs','Intellectual needs','Employment needs'],a:0,x:'Nursing homes cater for people with health problems, e.g. after a stroke.'},
+ {q:'Widened door frames and accessible toilets mainly help service users with…',o:['Physical disabilities','Learning difficulties','Mental health needs','Stress-related illness'],a:0,x:'They support mobility for wheelchair users.'},
+ {q:'To reach Level 3 in a 12-mark “analyse how needs can be met” question, you must…',o:['Discuss all four types of need','Write at least two pages','List as many needs as possible','Focus on physical needs'],a:0,x:'Level 3 needs all four of physical, intellectual, emotional and social. At least two types are needed for Level 2, and three for the top of Level 2.'},
+ {q:'An answer that only lists needs, without explaining how they are met, is likely to be…',o:['Level 1','Level 2','Level 3','Full marks if the list is long'],a:0,x:'Listing a range of needs, or covering only one type, is a Level 1 response.'},
+ {q:'Which is a “however” point about good physical health?',o:['A healthy person may still have low self-esteem because of bullying','A healthy person feels confident','A healthy person has high self-esteem','A healthy person feels in control'],a:0,x:'Evaluation means showing the link is not always direct.'},
+ {q:'Feeling like a burden on the family is an example of ill-health affecting…',o:['Psychological well-being','Physical health','Education','Employment'],a:0,x:'It is a negative effect on psychological (emotional) well-being.'},
+ {q:'A teenager getting a part-time job because the main earner is ill is an effect on the family’s…',o:['Employment','Leisure activities','Education','Relationships'],a:0,x:'Another family member may have to find work to provide for the family.'},
+ {q:'Which is a positive effect of ill-health on family relationships?',o:['The family becomes emotionally closer','Less time with friends','More arguments','Resenting help'],a:0,x:'Ill-health can bring a family closer together.'},
+ {q:'Extra heating costs from being at home all day affect the individual’s…',o:['Income','Leisure activities','Relationships','Education'],a:0,x:'Income may have to be used in different ways, e.g. heating and travel to appointments.'},
+ {q:'Information in Makaton or easy-read format mainly meets which need for people with learning difficulties?',o:['Knowledge and understanding (intellectual)','Mobility (physical)','Friendship (social)','Warmth (physical)'],a:0,x:'Accessible information helps people understand their condition and process new information.'},
+ {q:'A befriending scheme for someone with mental health problems mainly meets which need?',o:['Social','Physical','Intellectual','Spiritual'],a:0,x:'It provides friendship and relationships with others.'},
+];
+
+const EXAM=[
+ {id:'e1',q:'Define ill-health.',marks:2,points:['States the person is unable to function normally','Refers to the presence of something negative (e.g. disease) or the absence of something positive (e.g. adequate nutrition)'],model:'Ill-health is a state in which an individual is unable to function normally because of the presence of something negative, such as a disease, or the absence of something positive, such as adequate nutrition.'},
+ {id:'e2',q:'Define stress-related illness.',marks:2,points:['Refers to physical symptoms, e.g. headaches, palpitations or stomach problems','Links these to feeling anxious or unable to cope with stressors such as work, money or family problems'],model:'Stress-related illness refers to physical symptoms such as headaches and stomach problems that result from the body’s reaction when a person feels anxious and unable to cope with stressors such as work or financial problems.'},
+ {id:'e3',scenario:'Callum is 3 and has just started at a playgroup. He is an only child, is shy with other children and gets upset when his mum leaves.',q:'Identify one emotional need Callum has, and explain one way it could be met by the playgroup staff.',marks:3,points:['Identifies a relevant emotional need, e.g. sense of belonging, feeling secure, feeling valued (1)','Describes a realistic way playgroup staff could meet it (1)','Develops the point with detail linked to Callum, e.g. a key worker greets him each morning and settles him into an activity so he feels secure when his mum leaves (1)'],model:'Callum needs to feel secure. Staff could assign him a key worker who greets him at the door each morning and stays with him while his mum leaves, settling him into an activity he enjoys so he feels safe and less upset.'},
+ {id:'e4',scenario:'Margaret, 78, has had a hip replacement. She used to be very independent but now needs help to get dressed.',q:'Explain two ways Margaret’s ill-health could affect her psychological well-being.',marks:4,points:['Way 1 identified, e.g. low self-esteem / feeling disempowered','Way 1 explained in relation to Margaret, e.g. needing help to dress may make her feel she has lost control of her life','Way 2 identified, e.g. anxious, worried or isolated','Way 2 explained, e.g. she may fear falling again, stop going out and become withdrawn'],model:'Margaret may develop low self-esteem because, having always been independent, she now relies on others to help her dress, which could make her feel disempowered. She may also feel anxious about falling again, so she stops going out and becomes withdrawn and isolated.'},
+ {id:'e5',q:'Explain two ways good physical health can have a positive impact on an individual’s psychological well-being.',marks:4,points:['Way 1 identified, e.g. high self-esteem / positive self-concept','Way 1 explained, e.g. because they look and feel well','Way 2 identified, e.g. sense of autonomy / confidence / able to cope','Way 2 explained, e.g. they feel in control because their lifestyle choices are keeping them healthy'],model:'A person in good physical health may have a positive self-concept because they look and feel well. They may also have a sense of autonomy, feeling in control of their life because the lifestyle choices they make are keeping them healthy.'},
+ {id:'e6',scenario:'Liam is 44 and has a long-term heart condition that means he can no longer work as a builder. He has two children aged 10 and 15.',q:'Describe how Liam’s ill-health might affect his children’s education.',marks:3,points:['The children may worry about their dad and lose concentration in school, so results suffer','The 15-year-old may miss school to help care for Liam or look after the younger child','Positive point: Liam is at home more and may help with homework, which could improve attainment'],model:'Both children may worry about their dad and lose concentration in class, which could affect their results. The 15-year-old may have to miss days of school to help look after Liam. On the other hand, Liam is now at home and may have more time to help with homework, which could improve their attainment.'},
+ {id:'e7',kind:'levels',scenario:'Kevin, 29, has severe depression and has been admitted to a psychiatric ward in his local hospital.',q:'Analyse how Kevin’s needs could be met by staff in the hospital.',marks:12,
+  levels:[['Level 1','1–4','Basic. Covers only one type of need, or lists needs without explaining how staff meet them. Little specialist vocabulary.'],['Level 2','5–8','Adequate. Discusses at least two types of need with how they are met; three types for the top of the level. Some specialist vocabulary.'],['Level 3','9–12','Competent. Discusses all four PIES needs, each linked to specific ways hospital staff meet them, well organised with accurate specialist vocabulary.']],
+  include:['Physical: e.g. nutrition (balanced meals, choice, protected mealtimes) or sleep (fewer disturbances)','Intellectual: e.g. knowledge of his illness (staff explain treatment, answer questions) or stimulation (books, activities)','Emotional: e.g. security (ward buzzers, window locks), respect (explaining procedures), expressing feelings (calm, ready-to-listen staff)','Social: e.g. interaction with staff and patients (activities, talking about interests), seeing family (visiting hours)','Links each method to Kevin and the hospital setting, not generic care']},
+ {id:'e8',kind:'levels',scenario:'Aisha, 38, has multiple sclerosis and now uses a wheelchair. She had to give up her job as a teacher. She is married with a daughter aged 8.',q:'Discuss how Aisha’s ill-health might affect her income, leisure activities and relationships.',marks:9,
+  levels:[['Level 1','1–3','Basic. Covers one area, or lists effects with little explanation.'],['Level 2','4–6','Adequate. Discusses at least two areas with some explanation linked to Aisha.'],['Level 3','7–9','Competent. Discusses all three areas with clear explanation linked to Aisha, including positive as well as negative effects.']],
+  include:['Income: e.g. loss of salary, depending on benefits, extra costs such as adapting the home or travel to appointments','Leisure: e.g. giving up activities she can no longer do, taking up new ones that suit her condition, more time for some activities','Relationships: e.g. strain with her husband, less contact with colleagues and friends, or becoming closer as a family','Balances negative effects with at least one positive effect']},
+];
+
+const DUMPS=[
+ {id:'d-defs',label:'Definitions',prompt:'Define health, ill-health, disease, stress-related illness, mental health and mental illness.',checks:[
+  ['Health is more than the absence of disease',['absence','not merely','not just']],
+  ['Health has several dimensions / is a positive state of well-being',['dimension','well-being','wellbeing','positive']],
+  ['Ill-health: unable to function normally',['function']],
+  ['Ill-health: presence of something negative or absence of something positive',['absence of something','presence','nutrition']],
+  ['Disease: a diagnostic label for signs and symptoms',['diagnos','label','symptom']],
+  ['Stress-related illness: physical symptoms caused by stressors',['stressor','headache','palpitation','stomach']],
+  ['Mental health: subjective well-being, able to cope',['cope','subjective','in control']],
+  ['Mental illness: abnormal behaviour linked to brain chemistry',['abnormal','chemical','brain']]]},
+ {id:'d-needs',label:'PIES needs and settings',prompt:'List the needs of service users under PIES and how they could be met in different settings.',checks:[
+  ['At least one physical need',['nutrition','sleep','hygiene','warmth','mobility','pain','medication','exercise','shelter']],
+  ['At least one intellectual need',['stimulation','knowledge','learning','occupation','skills']],
+  ['At least one emotional need',['belonging','esteem','autonomy','dignity','valued','secur','loved','respect','stability']],
+  ['At least one social need',['friend','relationship','interaction','contact','social skill','community']],
+  ['A named setting',['nursery','school','hospital','hospice','nursing home','residential','day care','day centre']],
+  ['A specific way staff meet a need',['by ','staff','provid','encourag']],
+  ['A named service user group',['child','older','disab','learning','mental','illness']]]},
+ {id:'d-wb',label:'Psychological well-being',prompt:'How can physical health and ill-health affect psychological well-being?',checks:[
+  ['Good health: self-esteem or self-concept',['esteem','self-concept','self concept']],
+  ['Good health: autonomy, control or confidence',['autonomy','control','confiden','cope']],
+  ['However: healthy people can still be unhappy, stressed or depressed',['depress','unhappy','stress','bereave','bully']],
+  ['Ill-health: anxiety, fear or insecurity',['anxi','fear','afraid','worr','insecur']],
+  ['Ill-health: burden, isolation or loss of control',['burden','isolat','withdrawn','disempower','control']],
+  ['However: inner strength, resilience or feeling loved',['inner strength','resilien','determin','loved','spiritual']]]},
+ {id:'d-eff',label:'Effects of ill-health',prompt:'How can ill-health affect the individual and their family?',checks:[
+  ['Income',['income','money','benefit','pay','poverty']],
+  ['Leisure activities',['leisure','hobby','sport','club','holiday']],
+  ['Relationships',['relationship','friend','partner','argu','closer']],
+  ['Education',['education','school','college','university','homework']],
+  ['Employment',['employ','job','work','promotion','part-time','part time']],
+  ['Effects on family members, not just the individual',['family','partner','children','child']],
+  ['At least one positive effect',['closer','more time','improve','new friend','positive']]]},
+];
+
+/* ---------- router ---------- */
+const VIEWS=['home','definitions','needs','settings','wellbeing','effects','exam','quiz','braindump'];
+function route(){let v=location.hash.slice(1)||'home';if(!VIEWS.includes(v))v='home';
+  document.querySelectorAll('.view').forEach(s=>s.hidden=s.id!=='v-'+v);
+  document.querySelectorAll('nav a').forEach(a=>{if(a.getAttribute('href')==='#'+v)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+  const cur=document.querySelector('nav a[aria-current]'); if(cur&&cur.scrollIntoView) cur.scrollIntoView({block:'nearest',inline:'center'});
+  window.scrollTo(0,0);}
+addEventListener('hashchange',route);
+
+/* ---------- home ---------- */
+const OUTCOMES=[
+ {id:'definitions',n:'1',title:'Defining health concepts',blurb:'Health, ill-health, disease, stress-related illness, mental health, mental illness',acts:['flash','match-defs']},
+ {id:'needs',n:'2',title:'PIES needs of service users',blurb:'Physical, intellectual, emotional and social needs of different groups',acts:['pies-sort','group-sort']},
+ {id:'settings',n:'3',title:'Meeting needs in settings',blurb:'Nursery, hospital, hospice, nursing home, day centre and more',acts:SETTINGS.map(s=>'set-'+s.id).concat(['planner'])},
+ {id:'wellbeing',n:'4',title:'Health and psychological well-being',blurb:'Evaluate the impact of health and ill-health',acts:['wb-sort','wb-gap']},
+ {id:'effects',n:'5',title:'Effects of ill-health',blurb:'Income, leisure, relationships, education and employment',acts:['effects']},
+];
+function avg(ids){return ids.reduce((t,id)=>t+(state.scores[id]||0),0)/ids.length;}
+const ICONS={
+ definitions:'<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5"/><path d="M9 8h6M9 12h4"/>',
+ needs:'<rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/>',
+ settings:'<path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M10 21v-4h4v4"/><path d="M12 8v5M9.5 10.5h5"/>',
+ wellbeing:'<path d="M20.8 8.8a5 5 0 0 0-8.8-3.3 5 5 0 0 0-8.8 3.3c0 5.2 8.8 11.2 8.8 11.2s8.8-6 8.8-11.2z"/><path d="M4 12h4l2-3 3 6 2-3h5"/>',
+ effects:'<circle cx="9" cy="8" r="3"/><path d="M3 20a6 6 0 0 1 12 0"/><circle cx="17.5" cy="9" r="2.5"/><path d="M16 14.6A5 5 0 0 1 21.5 19"/>',
+ exam:'<path d="M4 20h4L19 9l-4-4L4 16z"/><path d="M13 7l4 4"/>',
+ quiz:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',
+ braindump:'<circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/>',
+ tick:'<path d="M5 12l5 5 9-10"/>'};
+const svg=(k,extra)=>{const e=document.createElementNS('http://www.w3.org/2000/svg','svg');e.setAttribute('viewBox','0 0 24 24');e.setAttribute('aria-hidden','true');e.innerHTML=ICONS[k];return e;};
+function ring(p){const r=22,c=2*Math.PI*r;const e=document.createElementNS('http://www.w3.org/2000/svg','svg');e.setAttribute('class','ring');e.setAttribute('viewBox','0 0 54 54');e.setAttribute('role','img');e.setAttribute('aria-label',p+'% complete');
+ e.innerHTML='<circle class="bg" cx="27" cy="27" r="'+r+'"/><circle class="fg" cx="27" cy="27" r="'+r+'" stroke-dasharray="'+c+'" stroke-dashoffset="'+(c*(1-p/100))+'"/><text x="27" y="31" text-anchor="middle">'+p+'%</text>';return e;}
+function renderHome(){
+  const g=$('#outcomes'); g.innerHTML='';
+  OUTCOMES.forEach(o=>{const p=Math.round(avg(o.acts));
+    g.append(h('a',{class:'ocard',href:'#'+o.id},h('span',{class:'big','aria-hidden':'true'},o.n),
+      h('span',{class:'ctop'},h('span',{class:'oi'},svg(o.id)),ring(p)),
+      h('strong',{},'BP'+o.n+': '+o.title),h('small',{},o.blurb)));});
+  const pr=$('#practiceLinks'); pr.innerHTML='';
+  const ex=Math.round(avg(EXAM.map(e=>'exam-'+e.id))), dq=state.scores['quiz'], bd=Math.round(avg(DUMPS.map(d=>d.id)));
+  pr.append(h('a',{href:'#exam'},h('span',{class:'oi'},svg('exam')),h('span',{},h('strong',{},'Exam practice'),h('small',{},'Average score '+ex+'%'))),
+            h('a',{href:'#quiz'},h('span',{class:'oi'},svg('quiz')),h('span',{},h('strong',{},'Quick quiz'),h('small',{},dq==null?'Not tried yet':'Best score '+dq+'%'))),
+            h('a',{href:'#braindump'},h('span',{class:'oi'},svg('braindump')),h('span',{},h('strong',{},'Brain dump'),h('small',{},'Coverage '+bd+'%'))));
+}
+function decorate(){
+  VIEWS.filter(v=>v!=='home').forEach(v=>{const sec=$('#v-'+v);const h2=sec.querySelector('h2');const bp=sec.querySelector('.bp');const lead=sec.querySelector('.lead');
+    const txt=h('div',{});if(bp)txt.append(bp);txt.append(h2);if(lead)txt.append(lead);
+    const ban=h('div',{class:'banner'},txt,h('div',{class:'ico'},svg(v)));sec.prepend(ban);});
+  const kIcon={'Retrieval practice':'quiz','Matching':'needs','Exam technique':'exam','Categorising':'needs','Application':'effects','Exam planning':'exam','Evaluation':'wellbeing','Cloze recall':'definitions'};
+  document.querySelectorAll('.kicker').forEach(k=>k.prepend(svg(kIcon[k.textContent]||'tick')));
+}
+function celebrate(){
+  try{if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;}catch(e){}
+  const box=h('div',{class:'confetti','aria-hidden':'true'});const cols=['#1d7a55','#2f5fbf','#b3345a','#c98a0c'];
+  for(let i=0;i<70;i++){const c=h('i',{style:'left:'+(Math.random()*100)+'%;background:'+cols[i%4]});box.append(c);
+    if(c.animate)c.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+(Math.random()*160-80)+'px,'+(innerHeight*(0.6+Math.random()*0.5))+'px) rotate('+(Math.random()*720)+'deg)',opacity:0}],{duration:1400+Math.random()*1200,easing:'cubic-bezier(.2,.6,.4,1)',fill:'forwards',delay:Math.random()*250});}
+  document.body.append(box);setTimeout(()=>box.remove(),3200);
+}
+$('#resetAll').onclick=()=>{if(confirm('Clear all saved scores and answers on this device?')){state={scores:{},answers:{},ticks:{},levels:{}};save();location.reload();}};
+
+/* ---------- generic: result box ---------- */
+function resultBox(pct,msg,again){if(pct>=70)setTimeout(celebrate,50);return h('div',{class:'result',role:'status'},h('span',{class:'badge'},pct+'%'),h('strong',{},pct>=90?'Brilliant work':pct>=70?'Well done':'Good effort'),h('p',{},msg),again?h('button',{class:'btn',type:'button',onclick:again},'Try again'):null);}
+function verdict(p){return p>=90?'Excellent. You know this well.':p>=70?'Good. Have another go to make it stick.':'Keep going. Repeat this activity later today and again tomorrow.';}
+
+/* ---------- match ---------- */
+function makeMatch(root,pairs,id){
+  root.innerHTML='';let sel=null,errors=0,done=0;
+  const hint=h('p',{class:'hint','aria-live':'polite'},'Tap an item on the left, then tap its match.');
+  const L=h('div',{class:'col'}),R=h('div',{class:'col'});
+  pairs.forEach((p,i)=>{const b=h('button',{type:'button',class:'mitem','data-i':i},p.tag?h('span',{class:'tag t-'+p.tag,title:TAGNAME[p.tag]},p.tag.toUpperCase()):null,h('span',{},p.a));
+    b.onclick=()=>{if(b.classList.contains('done'))return;L.querySelectorAll('.sel').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');sel=i;hint.className='hint';hint.textContent='Now choose the match for “'+p.a+'”.';};L.append(b);});
+  shuffle(pairs.map((_,i)=>i)).forEach(i=>{const b=h('button',{type:'button',class:'mitem right'},pairs[i].b);
+    b.onclick=()=>{if(b.classList.contains('done'))return;if(sel===null){hint.className='hint bad';hint.textContent='Pick an item on the left first.';return;}
+      const lb=L.querySelector('[data-i="'+sel+'"]');
+      if(sel===i){lb.classList.remove('sel');lb.classList.add('done');b.classList.add('done');done++;sel=null;hint.className='hint good';hint.textContent='Correct.';
+        if(done===pairs.length){const pct=Math.round(100*pairs.length/(pairs.length+errors));record(id,pct);root.append(resultBox(pct,(errors?errors+' wrong attempt'+(errors>1?'s':'')+'. ':'No mistakes. ')+verdict(pct),()=>makeMatch(root,pairs,id)));}}
+      else{errors++;shake(b);hint.className='hint bad';hint.textContent='Not that one. Try again.';}};R.append(b);});
+  root.append(hint,h('div',{class:'match'},L,R));
+}
+
+/* ---------- sort ---------- */
+function makeSort(root,items,cats,id,cols){
+  root.innerHTML='';let sel=null,errors=0,placed=0;
+  const hint=h('p',{class:'hint','aria-live':'polite'},'Tap a card first.');
+  const pool=h('div',{class:'pool'});
+  const grid=h('div',{class:'buckets'+(cols===3?' three':'')});const lists={};
+  cats.forEach(c=>{const list=h('ul',{class:'blist'});const btn=h('button',{type:'button',class:'bhead'},c.label);
+    const bk=h('div',{class:'bucket '+(c.cls||'')},btn,c.desc?h('p',{class:'bdesc'},c.desc):null,list);
+    bk.addEventListener('click',()=>place(c.id));lists[c.id]=list;grid.append(bk);});
+  shuffle(items).forEach(it=>{const b=h('button',{type:'button',class:'chip'},it.text);
+    b.onclick=()=>{pool.querySelectorAll('.sel').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');sel={it,b};hint.className='hint';hint.textContent='Where does “'+it.text+'” belong?';};pool.append(b);});
+  function place(cid){if(!sel){hint.className='hint bad';hint.textContent='Tap a card first.';return;}
+    if(sel.it.cat===cid){sel.b.remove();lists[cid].append(h('li',{},sel.it.text));placed++;hint.className='hint good';hint.textContent='Correct.';sel=null;
+      if(placed===items.length){const pct=Math.round(100*items.length/(items.length+errors));record(id,pct);root.append(resultBox(pct,verdict(pct),()=>makeSort(root,items,cats,id,cols)));}}
+    else{errors++;shake(sel.b);hint.className='hint bad';hint.textContent='Not quite. Think again about where it fits.';}}
+  root.append(hint,pool,grid);
+}
+
+/* ---------- flashcards ---------- */
+function makeFlash(root){
+  root.innerHTML='';let queue=shuffle(DEFS.map((_,i)=>i)),known=0,flipped=false;
+  const card=h('button',{type:'button',class:'fcard','aria-live':'polite'});
+  const meta=h('p',{class:'meta'});
+  const again=h('button',{type:'button',class:'btn ghost'},'Again');
+  const got=h('button',{type:'button',class:'btn'},'Got it');
+  function show(){if(!queue.length){record('flash',100);root.innerHTML='';root.append(resultBox(100,'You have recalled all six definitions.',()=>makeFlash(root)));return;}
+    const d=DEFS[queue[0]];flipped=false;card.classList.remove('flipped');card.innerHTML='';
+    card.append(h('span',{class:'face'},h('span',{class:'term'},d.term),h('small',{},'Tap to flip')),h('span',{class:'face back'},h('p',{},h('strong',{},d.term+': '),d.def)));
+    card.setAttribute('aria-label',d.term+'. Tap to show the definition.');
+    meta.textContent=known+' of '+DEFS.length+' known · '+queue.length+' left in the deck';}
+  card.onclick=()=>{flipped=!flipped;card.classList.toggle('flipped',flipped);if(flipped)card.setAttribute('aria-label',card.querySelector('.back').textContent);};
+  again.onclick=()=>{const c=queue.shift();queue.splice(Math.min(2,queue.length),0,c);show();};
+  got.onclick=()=>{queue.shift();known++;show();};
+  root.append(h('div',{class:'flash'},card),h('div',{class:'row'},again,got),meta);show();
+}
+
+/* ---------- planner ---------- */
+function makePlanner(root,plan){
+  root.innerHTML='';const key='plan-'+plan.id;const saved=state.answers[key]||{};
+  root.append(h('div',{class:'scenario'},h('strong',{},plan.title),h('p',{},plan.text),h('p',{style:'margin:0'},h('em',{},plan.q))));
+  const grid=h('div',{class:'plan'});const fields={};
+  ['p','i','e','s'].forEach(t=>{const need=h('input',{type:'text',value:saved[t+'n']||'',placeholder:'e.g. a '+TAGNAME[t].toLowerCase()+' need'});
+    const how=h('textarea',{placeholder:'How staff in the '+plan.setting+' could meet it, with a specific example'},saved[t+'h']||'');
+    const persist=()=>{state.answers[key]=Object.assign(state.answers[key]||{},{[t+'n']:need.value,[t+'h']:how.value});save();};
+    need.oninput=persist;how.oninput=persist;fields[t]={need,how};
+    const nid='pn-'+plan.id+t,hid='ph-'+plan.id+t;need.id=nid;how.id=hid;
+    grid.append(h('div',{class:'prow r-'+t},h('span',{class:'tag t-'+t,'aria-hidden':'true'},t.toUpperCase()),
+      h('div',{},h('label',{for:nid},TAGNAME[t]+' need'),need,h('label',{for:hid,style:'margin-top:.5rem'},'How it could be met'),how)));});
+  const out=h('div',{'aria-live':'polite'});
+  const btn=h('button',{type:'button',class:'btn',style:'margin-top:1rem'},'Check my plan');
+  btn.onclick=()=>{let types=0;['p','i','e','s'].forEach(t=>{if(fields[t].need.value.trim().length>2&&fields[t].how.value.trim().length>=25)types++;});
+    const band=types<=1?['Level 1','1–4 marks','Only one type of need is developed. Add the others.']:types===2?['Level 2','5–6 marks','Two types covered. Three types reach the top of Level 2.']:types===3?['Level 2','7–8 marks','Three types covered. You need all four to reach Level 3.']:['Level 3 is possible','9–12 marks','All four types covered. Now check the quality points below.'];
+    out.innerHTML='';out.append(h('div',{class:'result'},h('strong',{},band[0]+' ('+band[1]+')'),h('p',{},band[2]+' A type counts once both boxes are filled with a developed point.')));
+    const qs=['Each way of meeting a need is specific to '+plan.title.split(',')[0]+' and the '+plan.setting,'I have explained why each method meets the need','I have used specialist vocabulary, e.g. autonomy, dignity, self-esteem, empowerment','I could add a second need for at least one type'];
+    const ul=h('ul',{class:'checks'});let ticked=0;
+    qs.forEach(q=>{const cb=h('input',{type:'checkbox'});cb.onchange=()=>{ticked+=cb.checked?1:-1;record('planner',types*20+ticked*5,true);};ul.append(h('li',{},h('label',{},cb,h('span',{},q))));});
+    out.append(h('p',{style:'margin:1rem 0 0;font-weight:700'},'Quality check'),ul);
+    record('planner',types*20,true);};
+  root.append(grid,btn,out);
+}
+
+/* ---------- gap fill ---------- */
+function makeGap(root){
+  root.innerHTML='';const answers=GAP.filter(x=>Array.isArray(x)).map(x=>x[0]);
+  root.append(h('div',{class:'bank','aria-label':'Word bank'},shuffle(answers).map(w=>h('span',{},w))));
+  const p=h('p',{class:'gaptext'});const inputs=[];let n=0;
+  GAP.forEach(part=>{if(typeof part==='string')p.append(part);else{const inp=h('input',{type:'text',autocomplete:'off',autocapitalize:'off',spellcheck:'false','aria-label':'Gap '+(++n)});inp.dataset.ans=part[0];inputs.push(inp);p.append(inp);}});
+  const out=h('div',{'aria-live':'polite'});
+  const norm=s=>s.trim().toLowerCase().replace(/[^a-z]/g,'');
+  const check=h('button',{type:'button',class:'btn'},'Check answers');
+  check.onclick=()=>{let c=0;inputs.forEach(i=>{const ok=norm(i.value)===norm(i.dataset.ans);i.classList.toggle('right',ok);i.classList.toggle('wrong',!ok);if(ok)c++;});
+    const pct=Math.round(100*c/inputs.length);record('wb-gap',pct);out.innerHTML='';out.append(resultBox(pct,c+' of '+inputs.length+' correct. '+(c<inputs.length?'Fix the red gaps and check again.':verdict(pct)),null));};
+  const reveal=h('button',{type:'button',class:'btn ghost'},'Show answers');
+  reveal.onclick=()=>inputs.forEach(i=>{i.value=i.dataset.ans;i.classList.remove('wrong');});
+  root.append(p,h('div',{class:'row'},check,reveal),out);
+}
+
+/* ---------- effects ---------- */
+function makeEffects(root){
+  root.innerHTML='';const deck=shuffle(EFFECTS).slice(0,14);let idx=0,score=0;
+  function show(){root.innerHTML='';
+    if(idx>=deck.length){const pct=Math.round(100*score/deck.length);record('effects',pct);root.append(resultBox(pct,score+' of '+deck.length+' fully correct. '+verdict(pct),()=>makeEffects(root)));return;}
+    const e=deck[idx];let who=null,area=null;
+    const whoBtns=WHO.map(w=>h('button',{type:'button','aria-pressed':'false'},w.label));
+    const areaBtns=AREAS.map(a=>h('button',{type:'button','aria-pressed':'false'},a.label));
+    whoBtns.forEach((b,i)=>b.onclick=()=>{who=WHO[i].id;whoBtns.forEach(x=>x.setAttribute('aria-pressed',x===b));chk.disabled=!(who&&area);});
+    areaBtns.forEach((b,i)=>b.onclick=()=>{area=AREAS[i].id;areaBtns.forEach(x=>x.setAttribute('aria-pressed',x===b));chk.disabled=!(who&&area);});
+    const fb=h('div',{'aria-live':'polite'});
+    const chk=h('button',{type:'button',class:'btn',disabled:true},'Check');
+    chk.onclick=()=>{const ok=who===e.who&&area===e.area;if(ok)score++;
+      [...whoBtns,...areaBtns].forEach(b=>b.disabled=true);chk.remove();
+      const whoL=WHO.find(w=>w.id===e.who).label.toLowerCase(),areaL=AREAS.find(a=>a.id===e.area).label.toLowerCase();
+      fb.append(h('div',{class:'explain'},h('p',{style:'margin:0 0 .5rem;font-weight:700;color:var('+(ok?'--ok':'--bad')+')'},ok?'Correct.':'Not quite.'),
+        h('p',{style:'margin:0'},'This is a '+(e.val==='pos'?'positive':'negative')+' effect on '+(e.who==='ind'?'the individual’s':'the family’s')+' '+areaL+'.'+(e.val==='pos'?' Positive points like this help you show balance in a “discuss” or “assess” answer.':''))),
+        h('button',{type:'button',class:'btn',style:'margin-top:1rem',onclick:()=>{idx++;show();}},idx+1<deck.length?'Next':'See my score'));};
+    root.append(h('p',{class:'qcount'},'Effect '+(idx+1)+' of '+deck.length+' · score '+score),h('div',{class:'stmt'},e.text),
+      h('div',{class:'choose'},h('h4',{},'Who does it affect?'),h('div',{class:'seg'},whoBtns),h('h4',{},'Which area of life?'),h('div',{class:'seg'},areaBtns)),chk,fb);}
+  show();
+}
+
+/* ---------- quiz ---------- */
+function makeQuiz(root){
+  const qs=shuffle(QUIZ).slice(0,10);let idx=0,score=0;
+  function show(){root.innerHTML='';
+    if(idx>=qs.length){const pct=score*10;record('quiz',pct);root.append(resultBox(pct,score+' out of 10. '+verdict(pct),()=>makeQuiz(root)));return;}
+    const q=qs[idx];const order=shuffle(q.o.map((_,i)=>i));const fb=h('div',{'aria-live':'polite'});
+    const opts=order.map(i=>h('button',{type:'button',class:'opt'},q.o[i]));
+    opts.forEach((b,k)=>b.onclick=()=>{const chosen=order[k];opts.forEach((x,j)=>{x.disabled=true;if(order[j]===q.a)x.classList.add('right');});
+      if(chosen===q.a)score++;else b.classList.add('wrong');
+      fb.append(h('div',{class:'explain'},h('p',{style:'margin:0'},(chosen===q.a?'Correct. ':'Not quite. ')+q.x)),
+        h('button',{type:'button',class:'btn',style:'margin-top:1rem',onclick:()=>{idx++;show();}},idx<9?'Next question':'See my score'));});
+    root.append(h('p',{class:'qcount'},'Question '+(idx+1)+' of 10 · score '+score),h('p',{class:'qtext'},q.q),h('div',{class:'opts'},opts),fb);}
+  show();
+}
+
+/* ---------- exam ---------- */
+function makeExam(root){
+  root.innerHTML='';
+  EXAM.forEach(ex=>{
+    const sid='exam-'+ex.id;const ta=h('textarea',{'aria-label':'Your answer',placeholder:'Write your answer here before you look at the mark scheme.',style:'min-height:'+(ex.marks>=9?'240px':'120px')},state.answers[sid]||'');
+    ta.oninput=()=>{state.answers[sid]=ta.value;save();};
+    const ms=h('div',{hidden:true});const line=h('p',{class:'scoreline','aria-live':'polite'});
+    const reveal=h('button',{type:'button',class:'btn',style:'margin-top:.75rem'},'Show mark scheme');
+    reveal.onclick=()=>{ms.hidden=!ms.hidden;reveal.textContent=ms.hidden?'Show mark scheme':'Hide mark scheme';};
+    if(ex.kind==='levels'){
+      ms.append(h('p',{style:'font-weight:700;margin:1rem 0 .4rem'},'A strong answer would include'),h('ul',{},ex.include.map(x=>h('li',{},x))),
+        h('p',{style:'font-weight:700;margin:1rem 0 .4rem'},'Which level is your answer? Be honest.'));
+      const lv=h('div',{class:'levels',role:'radiogroup'});
+      ex.levels.forEach((L,k)=>{const r=h('input',{type:'radio',name:'lv-'+ex.id});if(state.levels[ex.id]===k){r.checked=true;}
+        const box=h('label',{class:'level'+(state.levels[ex.id]===k?' on':'')},r,h('span',{},h('b',{},L[0]+' ('+L[1]+' marks)'),L[2]));
+        r.onchange=()=>{state.levels[ex.id]=k;lv.querySelectorAll('.level').forEach(x=>x.classList.remove('on'));box.classList.add('on');
+          const top=parseInt(L[1].split('–')[1]);record(sid,100*top/ex.marks,true);line.textContent='Self-assessed: '+L[0]+', up to '+top+' of '+ex.marks+' marks.';renderHome();};
+        lv.append(box);});
+      ms.append(lv);
+      if(state.levels[ex.id]!=null){const L=ex.levels[state.levels[ex.id]];line.textContent='Self-assessed: '+L[0]+', up to '+L[1].split('–')[1]+' of '+ex.marks+' marks.';}
+    } else {
+      const ticks=state.ticks[ex.id]||[];const ul=h('ul',{class:'checks'});
+      const upd=()=>{const n=ex.points.filter((_,k)=>(state.ticks[ex.id]||[])[k]).length;const m=Math.min(n,ex.marks);line.textContent='Your mark: '+m+' / '+ex.marks;record(sid,100*m/ex.marks,true);};
+      ex.points.forEach((pt,k)=>{const cb=h('input',{type:'checkbox'});cb.checked=!!ticks[k];cb.onchange=()=>{state.ticks[ex.id]=state.ticks[ex.id]||[];state.ticks[ex.id][k]=cb.checked;save();upd();};ul.append(h('li',{},h('label',{},cb,h('span',{},pt))));});
+      ms.append(h('p',{style:'font-weight:700;margin:1rem 0 .2rem'},'Tick each point you made'),ul,h('div',{class:'model'},h('strong',{},'Model answer: '),ex.model));
+      if(ticks.some(Boolean)){const n=ex.points.filter((_,k)=>ticks[k]).length;line.textContent='Your mark: '+Math.min(n,ex.marks)+' / '+ex.marks;}
+    }
+    ms.append(line);
+    root.append(h('details',{class:'exq'},h('summary',{},h('span',{},ex.q),h('span',{class:'marks'},'['+ex.marks+']')),
+      h('div',{class:'body'},ex.scenario?h('div',{class:'scenario'},ex.scenario):null,ta,reveal,ms)));
+  });
+}
+
+/* ---------- brain dump ---------- */
+function makeDump(root,d){
+  root.innerHTML='';let t=180,timer=null;const sid=d.id;
+  const ta=h('textarea',{'aria-label':'Your brain dump',style:'min-height:220px',placeholder:'Write everything you can remember…'},state.answers[sid]||'');
+  ta.oninput=()=>{state.answers[sid]=ta.value;save();};
+  const clock=h('span',{class:'timer','aria-live':'off'},'3:00');
+  const fmt=s=>Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+  const start=h('button',{type:'button',class:'btn ghost'},'Start 3-minute timer');
+  start.onclick=()=>{if(timer){clearInterval(timer);timer=null;start.textContent='Start 3-minute timer';return;}
+    t=180;clock.textContent=fmt(t);start.textContent='Stop timer';ta.focus();
+    timer=setInterval(()=>{t--;clock.textContent=fmt(t);if(t<=0){clearInterval(timer);timer=null;clock.textContent='Time!';start.textContent='Start 3-minute timer';}},1000);};
+  const out=h('div',{'aria-live':'polite'});
+  const chk=h('button',{type:'button',class:'btn'},'Check my brain dump');
+  chk.onclick=()=>{const txt=ta.value.toLowerCase();out.innerHTML='';const ul=h('ul',{class:'checks'});const boxes=[];
+    d.checks.forEach(([label,kws])=>{const found=kws.some(k=>txt.includes(k));const cb=h('input',{type:'checkbox'});cb.checked=found;boxes.push(cb);
+      cb.onchange=()=>score();ul.append(h('li',{},h('label',{},cb,h('span',{},label))));});
+    const res=h('p',{class:'scoreline'});
+    function score(){const n=boxes.filter(b=>b.checked).length;const pct=Math.round(100*n/boxes.length);res.textContent='You covered '+n+' of '+boxes.length+' ('+pct+'%). Untick anything you only half-mentioned.';record(sid,pct,true);}
+    out.append(h('p',{style:'font-weight:700;margin:1rem 0 .2rem'},'Ticked items were spotted automatically. Adjust them if needed.'),ul,res);score();};
+  root.append(h('p',{style:'font-weight:700'},d.prompt),h('div',{class:'row',style:'margin-bottom:.6rem'},start,clock),ta,h('div',{class:'row',style:'margin-top:.75rem'},chk),out);
+}
+
+/* ---------- picker helper ---------- */
+function picker(root,items,labelFn,onPick){root.innerHTML='';const btns=items.map((it,k)=>{const b=h('button',{type:'button','aria-pressed':'false'},labelFn(it));
+  b.onclick=()=>{btns.forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');onPick(it);};return b;});root.append(...btns);btns[0].click();}
+
+/* ---------- init ---------- */
+makeFlash($('#flash'));
+makeMatch($('#matchDefs'),DEFS.map(d=>({a:d.term,b:d.short})),'match-defs');
+$('#defPoints').append(...DEFS.map(d=>h('details',{},h('summary',{},d.term),h('ul',{},d.points.map(p=>h('li',{},p))))));
+makeSort($('#piesSort'),PIES_ITEMS,PIES_CATS,'pies-sort');
+makeSort($('#groupSort'),GROUP_ITEMS,GROUPS.map(g=>({id:g.id,label:g.label})),'group-sort',3);
+picker($('#settingPick'),SETTINGS,s=>s.name,s=>makeMatch($('#settingMatch'),s.pairs.map(([tag,a,b])=>({tag,a,b})),'set-'+s.id));
+picker($('#planPick'),PLANS,p=>p.title,p=>makePlanner($('#planner'),p));
+makeSort($('#wbSort'),WB_ITEMS,WB_CATS,'wb-sort');
+makeGap($('#gapFill'));
+makeEffects($('#effectsGame'));
+makeQuiz($('#quiz'));
+makeExam($('#examList'));
+picker($('#dumpPick'),DUMPS,d=>d.label,d=>makeDump($('#dump'),d));
+decorate();renderHome();route();
+</script>
+</body>
+</html>
